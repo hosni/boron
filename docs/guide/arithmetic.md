@@ -42,7 +42,7 @@ $date->copy()->endOfCalendarYear();    // 1403-12-30 23:59:59 (leap)
 
 ## Days and smaller units
 
-Day / hour / minute arithmetic is calendar-independent — keep using Carbon:
+Day / hour / minute arithmetic is calendar-independent - keep using Carbon:
 
 ```php
 $date->addDays(3);

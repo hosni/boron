@@ -1,6 +1,6 @@
 {
     "name": "hosni/boron",
-    "description": "Boron (B, atomic number 5) — a multi-calendar (Jalali/Shamsi, Hijri, Gregorian) drop-in replacement for Carbon (C, atomic number 6).",
+    "description": "Boron (B, atomic number 5) - a multi-calendar (Jalali/Shamsi, Hijri, Gregorian) drop-in replacement for Carbon (C, atomic number 6).",
     "license": "MIT",
     "type": "library",
     "keywords": [

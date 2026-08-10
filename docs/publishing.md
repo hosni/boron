@@ -41,8 +41,8 @@ Open `http://127.0.0.1:8000/`. Build a static site with `mkdocs build`
 
 ## Versions & aliases
 
-- **latest** — usually tracks `master`
-- **stable** — point at a release tag (e.g. `v0.1.0`) in the RTD Versions UI
+- **latest** - usually tracks `master`
+- **stable** - point at a release tag (e.g. `v0.1.0`) in the RTD Versions UI
 - Git tags become versioned docs automatically when builds are enabled for tags
 
 ## Custom domain (optional)

@@ -25,7 +25,7 @@ Carbon::parseFromCalendar('jalali', '1403-1-1 14:30');
 Carbon::parseFromCalendar('jalali', '۱۴۰۳/۰۱/۰۱');
 ```
 
-Bad input throws [`InvalidFormatException`](exceptions.md) — catch it in form
+Bad input throws [`InvalidFormatException`](exceptions.md) - catch it in form
 validation.
 
 ## From plain Carbon / DateTime

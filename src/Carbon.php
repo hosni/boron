@@ -12,7 +12,7 @@ use Carbon\Carbon as BaseCarbon;
  * Boron multi-calendar system on top.
  *
  * Because it extends Carbon, it can be handed to anything type-hinted
- * against Carbon\Carbon — including Laravel's Date::use(). Conversions
+ * against Carbon\Carbon - including Laravel's Date::use(). Conversions
  * (toImmutable()/toMutable()) stay inside the Boron family instead of
  * leaking plain Carbon instances.
  */

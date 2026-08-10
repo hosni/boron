@@ -11,11 +11,11 @@ ones through [`CalendarRegistry`](../api/calendar-registry.md).
 | `jalali` | `persian`, `shamsi` | arithmetic | 33-year cycle, aligned with ICU |
 | `jalali-astronomical` | `persian-astronomical` | arithmetic | date-object astronomical table |
 | `hijri` | `islamic`, `arabic` | arithmetic | Tabular (civil) Islamic |
-| `jalali-intl` | — | ICU | Requires `ext-intl` |
-| `hijri-intl` | — | ICU | ICU Islamic civil |
-| `hijri-umalqura` | — | ICU | Saudi Umm al-Qura |
-| `hijri-astronomical` | — | ICU | ICU `islamic` |
-| `gregorian-intl` | — | ICU | ICU Gregorian (forced proleptic) |
+| `jalali-intl` | - | ICU | Requires `ext-intl` |
+| `hijri-intl` | - | ICU | ICU Islamic civil |
+| `hijri-umalqura` | - | ICU | Saudi Umm al-Qura |
+| `hijri-astronomical` | - | ICU | ICU `islamic` |
+| `gregorian-intl` | - | ICU | ICU Gregorian (forced proleptic) |
 
 ```php
 use Boron\CalendarRegistry;
@@ -27,11 +27,11 @@ CalendarRegistry::get('shamsi');    // same driver as jalali
 
 ## Choosing a driver
 
-- **`jalali`** — default Jalali for apps; matches ICU day-for-day in the modern range.
-- **`jalali-astronomical`** — faithful port of date-object's astronomical table; can
+- **`jalali`** - default Jalali for apps; matches ICU day-for-day in the modern range.
+- **`jalali-astronomical`** - faithful port of date-object's astronomical table; can
   differ by a day around a few historical leap years (1308/1309, 1341/1342, 1473/1474).
-- **`hijri`** — civil tabular calendar; may differ ±1 day from moon-sighting calendars.
-- **`hijri-umalqura`** — use for Saudi-official / religious business rules (needs intl).
+- **`hijri`** - civil tabular calendar; may differ ±1 day from moon-sighting calendars.
+- **`hijri-umalqura`** - use for Saudi-official / religious business rules (needs intl).
 
 ## Supported range
 

@@ -11,5 +11,5 @@ Boron is a thin calendar layer on Carbon. Prefer these entry points:
 | [`Boron\CalendarRegistry`](calendar-registry.md) | Driver lookup, defaults, registration |
 | [Calendar drivers](calendar-drivers.md) | `CalendarInterface` and built-ins |
 
-Everything else is Carbon — see the
+Everything else is Carbon - see the
 [Carbon documentation](https://carbon.nesbot.com/docs/).

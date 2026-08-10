@@ -24,8 +24,8 @@ Other calendars are a **view** used for:
 ```php
 $date = Carbon::parse('2024-03-20')->withCalendar('jalali');
 
-$date->year;           // 2024  — Gregorian (Carbon)
-$date->calendarYear;   // 1403  — Jalali (active calendar)
+$date->year;           // 2024  - Gregorian (Carbon)
+$date->calendarYear;   // 1403  - Jalali (active calendar)
 $date->format('Y-m-d');           // 2024-03-20
 $date->toCalendarDateString();    // 1403-01-01
 ```
@@ -40,4 +40,4 @@ formatting, and calendar arithmetic.
 
 `Boron\Carbon instanceof Carbon\Carbon` is `true`. Pass it anywhere Carbon is
 accepted. `toImmutable()` / `toMutable()` return Boron flavors and keep the
-active calendar — they never leak plain Carbon.
+active calendar - they never leak plain Carbon.

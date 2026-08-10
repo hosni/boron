@@ -3,11 +3,11 @@
 **A multi-calendar, drop-in replacement for [Carbon](https://carbon.nesbot.com/).**
 
 > Boron (B) is element **5** of the periodic table. Carbon (C) is element **6**.
-> Boron sits right next to Carbon — a little lighter, and it knows more calendars.
+> Boron sits right next to Carbon - a little lighter, and it knows more calendars.
 
 Boron adds Jalali (Shamsi / Solar Hijri), Hijri (Islamic / Lunar), and Gregorian
-calendars on top of Carbon. You keep the entire Carbon API — diffing,
-localization, `setTestNow()`, type-hints against `Carbon\Carbon` — and gain a
+calendars on top of Carbon. You keep the entire Carbon API - diffing,
+localization, `setTestNow()`, type-hints against `Carbon\Carbon` - and gain a
 calendar layer that converts freely between systems.
 
 ```php
@@ -23,14 +23,14 @@ Carbon::now()->calendarFormat('l j F Y', 'jalali', 'fa', true);
 
 ## Why Boron?
 
-- **Not a reinvention** — `Boron\Carbon` extends `Carbon\Carbon`; Laravel and
+- **Not a reinvention** - `Boron\Carbon` extends `Carbon\Carbon`; Laravel and
   every Carbon type-hint keep working.
-- **Two driver families** — pure-PHP arithmetic (inspired by
+- **Two driver families** - pure-PHP arithmetic (inspired by
   [date-object](https://github.com/shahabyazdi/date-object)) and ICU via
   `ext-intl`.
-- **Presentation-layer calendars** — the stored instant stays Gregorian; other
+- **Presentation-layer calendars** - the stored instant stays Gregorian; other
   calendars are a view for input and display.
-- **Laravel-ready** — auto-discovered provider, Eloquent casts, `php artisan about`,
+- **Laravel-ready** - auto-discovered provider, Eloquent casts, `php artisan about`,
   and [Laravel Boost](laravel/boost.md) AI skills.
 
 ## Class family

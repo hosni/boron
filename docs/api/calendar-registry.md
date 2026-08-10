@@ -27,5 +27,5 @@ CalendarRegistry::getDefaultLocale();
 
 !!! note
     Prefer `Boron\Carbon::setDefaultCalendar()` / `setDefaultCalendarLocale()`
-    from application code — they delegate here and keep the public API on the
+    from application code - they delegate here and keep the public API on the
     date classes.

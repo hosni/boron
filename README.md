@@ -5,13 +5,13 @@
 **A multi-calendar, drop-in replacement for [Carbon](https://carbon.nesbot.com/).**
 
 > Boron (B) is element **5** of the periodic table. Carbon (C) is element **6**.
-> Boron sits right next to Carbon — a little lighter, and it knows more calendars. :)
+> Boron sits right next to Carbon - a little lighter, and it knows more calendars. :)
 
 **Docs:** [boron.readthedocs.io](https://boron.readthedocs.io/)
 
 Boron adds a **multi-calendar system** on top of Carbon: Jalali (Shamsi /
 Solar Hijri), Hijri (Islamic / Lunar) and Gregorian, freely convertible to
-each other. You still get the entire Carbon feature set — diffing,
+each other. You still get the entire Carbon feature set - diffing,
 localization, `setTestNow()`, `CarbonInterface`, everything.
 
 The calendar engine is a PHP port of the Julian-Day-Number design of
@@ -36,7 +36,7 @@ Boron does **not** reinvent Carbon. It extends it:
 
 | Class | Extends | Use it when... |
 |---|---|---|
-| `Boron\Carbon` | `Carbon\Carbon` | mutable dates — Laravel's `Date::use()`, Eloquent casts, anything type-hinted against `Carbon\Carbon` |
+| `Boron\Carbon` | `Carbon\Carbon` | mutable dates - Laravel's `Date::use()`, Eloquent casts, anything type-hinted against `Carbon\Carbon` |
 | `Boron\CarbonImmutable` | `Carbon\CarbonImmutable` | immutable dates |
 
 Both implement `Boron\CarbonInterface`, which **extends
@@ -52,11 +52,11 @@ composer require hosni/boron
 ```
 
 Requirements: PHP 8.1+, `nesbot/carbon` ^3.0. The `intl` extension is
-optional — it unlocks the ICU drivers (`*-intl`, `hijri-umalqura`).
+optional - it unlocks the ICU drivers (`*-intl`, `hijri-umalqura`).
 
 ## Laravel
 
-**Supported: Laravel 11, 12 and 13** — Boron requires Carbon 3, which Laravel
+**Supported: Laravel 11, 12 and 13** - Boron requires Carbon 3, which Laravel
 supports since `v11.0.0` (`nesbot/carbon: ^2.72.2|^3.0`; Laravel 12+ requires
 Carbon 3 exclusively). Laravel 10 and below pin Carbon 2 and cannot be used
 with Boron.
@@ -86,9 +86,9 @@ calendar drivers, ICU availability).
 Boron ships [Laravel Boost](https://laravel.com/docs/boost) assets, so AI
 agents in Boost-enabled projects automatically know how to use it:
 
-- **Guidelines** (`resources/boost/guidelines/core.blade.php`) — always-on
+- **Guidelines** (`resources/boost/guidelines/core.blade.php`) - always-on
   context loaded into `CLAUDE.md`/`AGENTS.md` by `php artisan boost:install`.
-- **Skill** (`resources/boost/skills/boron-development/SKILL.md`) — the
+- **Skill** (`resources/boost/skills/boron-development/SKILL.md`) - the
   `boron-development` agent skill with in-depth usage patterns and pitfalls.
 
 ## Calendars
@@ -99,11 +99,11 @@ agents in Boost-enabled projects automatically know how to use it:
 | `jalali` | `persian`, `shamsi` | arithmetic | 33-year cycle, aligned with ICU |
 | `jalali-astronomical` | `persian-astronomical` | arithmetic | date-object astronomical table |
 | `hijri` | `islamic`, `arabic` | arithmetic | tabular (civil) Islamic |
-| `jalali-intl` | — | ICU | requires `ext-intl` |
-| `hijri-intl` | — | ICU | Islamic civil (ICU) |
-| `hijri-umalqura` | — | ICU | Saudi Umm al-Qura |
-| `hijri-astronomical` | — | ICU | ICU `islamic` |
-| `gregorian-intl` | — | ICU | ICU Gregorian (forced proleptic) |
+| `jalali-intl` | - | ICU | requires `ext-intl` |
+| `hijri-intl` | - | ICU | Islamic civil (ICU) |
+| `hijri-umalqura` | - | ICU | Saudi Umm al-Qura |
+| `hijri-astronomical` | - | ICU | ICU `islamic` |
+| `gregorian-intl` | - | ICU | ICU Gregorian (forced proleptic) |
 
 Caveats:
 
@@ -168,8 +168,8 @@ $date->calendarDayOfYear;    // 1
 $date->toCalendarDateString();      // 1403-01-01
 $date->toCalendarDateTimeString();  // 1403-01-01 00:00:00
 
-$date->year;                 // 2024 — Carbon getters untouched
-$date->format('Y-m-d');      // 2024-03-20 — Carbon format untouched
+$date->year;                 // 2024 - Carbon getters untouched
+$date->format('Y-m-d');      // 2024-03-20 - Carbon format untouched
 ```
 
 Or set it globally (shared by `Carbon` and `CarbonImmutable`):
@@ -217,7 +217,7 @@ $date->setCalendarDate(1404, 1, 1);           // keeps time & timezone
 $date->isCalendarLeapYear();                  // per active calendar
 ```
 
-Day/hour/... arithmetic is calendar-independent — just use Carbon's own
+Day/hour/... arithmetic is calendar-independent - just use Carbon's own
 `addDays()`, `addHours()`, `diffInDays()`, ...
 
 ### Immutability
@@ -256,19 +256,19 @@ composer test
 
 The suite includes a parity test that checks the arithmetic Jalali driver
 against ICU's Persian calendar for every day between 1900 and 2100, plus
-round-trip tests for all drivers over 1800–2200, and a Laravel integration
+round-trip tests for all drivers over 1800-2200, and a Laravel integration
 suite running on [Orchestra Testbench](https://github.com/orchestral/testbench)
 (Date facade, helpers, Eloquent casts, serialization).
 
 ## Credits
 
-- [Hossein Hosni](https://github.com/hosni) — author of Boron.
-- [Shahab Yazdi](https://github.com/shahabyazdi) — the calendar engine design
+- [Hossein Hosni](https://github.com/hosni) - author of Boron.
+- [Shahab Yazdi](https://github.com/shahabyazdi) - the calendar engine design
   and the Persian astronomical leap-year table come from his
   [date-object](https://github.com/shahabyazdi/date-object) library.
 - [Brian Nesbitt, kylekatarnls & Carbon contributors](https://github.com/CarbonPHP/carbon)
-  — the shoulders Boron stands on.
-- [ICU](https://icu.unicode.org/) — the reference implementation behind the
+  for the Carbon foundation Boron builds on.
+- [ICU](https://icu.unicode.org/) - the reference implementation behind the
   `intl` drivers.
 
 ## License

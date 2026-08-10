@@ -15,7 +15,7 @@ $date->julianDayNumber();                   // 2460390
 ## CalendarDate
 
 `toJalali()` / `toHijri()` / `toCalendarDate()` return a
-[`CalendarDate`](../api/calendar-date.md) — an immutable year/month/day in one
+[`CalendarDate`](../api/calendar-date.md) - an immutable year/month/day in one
 calendar. Time and timezone stay on the Carbon instance; the value object is
 date-only.
 

@@ -23,7 +23,7 @@ Carbon::fromJalali(1403, 6, 31)->addCalendarMonths(1);
 
 ## In Laravel
 
-Install the package — the service provider auto-registers and calls
+Install the package - the service provider auto-registers and calls
 `Date::use(Boron\Carbon::class)`:
 
 ```php

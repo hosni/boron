@@ -9,7 +9,7 @@ description: Work with dates in multiple calendars (Jalali/Shamsi, Hijri, Gregor
 
 Use this skill whenever the task involves Jalali (Shamsi/Persian), Hijri (Islamic), or multi-calendar dates in an application using `hosni/boron`: displaying dates to users, parsing user-entered dates, storing them, date arithmetic in a non-Gregorian calendar, or localized date formatting.
 
-## Core model — read this first
+## Core model - read this first
 
 - Boron instances ARE Carbon: `Boron\Carbon extends Carbon\Carbon` and `Boron\CarbonImmutable extends Carbon\CarbonImmutable`. In Laravel, `now()`, `today()`, `Date::*` and Eloquent datetime casts already return them. Every Carbon method works unchanged.
 - The stored instant is always Gregorian/UTC-based. Other calendars are a **view** on top. Store dates normally (Gregorian columns, standard casts); convert only at the presentation/input boundary.
@@ -24,7 +24,7 @@ Use this skill whenever the task involves Jalali (Shamsi/Persian), Hijri (Islami
 | `jalali` | `persian`, `shamsi` | default Jalali driver; matches ICU/reality day-for-day |
 | `jalali-astronomical` | `persian-astronomical` | date-object's astronomical approximation |
 | `hijri` | `islamic`, `arabic` | tabular Islamic; can differ ±1 day from sighting-based calendars |
-| `jalali-intl`, `hijri-intl`, `hijri-umalqura` | — | ICU drivers, require ext-intl; use `hijri-umalqura` for the Saudi official calendar |
+| `jalali-intl`, `hijri-intl`, `hijri-umalqura` | - | ICU drivers, require ext-intl; use `hijri-umalqura` for the Saudi official calendar |
 
 ## Creating dates from calendar input
 
@@ -39,7 +39,7 @@ Carbon::fromCalendar('hijri-umalqura', 1447, 1, 1, timezone: 'Asia/Tehran');
 // and Persian (۱۴۰۳) or Arabic-Indic digits.
 Carbon::parseFromCalendar('jalali', '1403/01/01 14:30');
 Carbon::parseFromCalendar('jalali', '۱۴۰۳/۰۱/۰۱');
-// Throws Boron\Exceptions\InvalidFormatException on bad input — catch it in form validation.
+// Throws Boron\Exceptions\InvalidFormatException on bad input - catch it in form validation.
 ```
 
 ## Converting for display
@@ -67,7 +67,7 @@ $date->calendarFormat('l j F Y H:i', 'jalali', 'fa', true);      // چهارشن
 \Boron\Carbon::setDefaultCalendar('jalali');
 \Boron\Carbon::setDefaultCalendarLocale('fa');
 
-now()->toCalendarDateString();   // "1405-05-19" — uses default calendar
+now()->toCalendarDateString();   // "1405-05-19" - uses default calendar
 now()->calendarYear;             // 1405
 now()->calendarMonthName;        // مرداد
 
@@ -91,7 +91,7 @@ $date->setCalendarDate(1404, 1, 1);   // keeps time and timezone
 $date->isCalendarLeapYear();
 ```
 
-Day/hour/minute arithmetic is calendar-independent — keep using Carbon's `addDays()`, `diffInDays()`, `diffForHumans()`, etc.
+Day/hour/minute arithmetic is calendar-independent - keep using Carbon's `addDays()`, `diffInDays()`, `diffForHumans()`, etc.
 
 ## Typical Laravel patterns
 
@@ -111,7 +111,7 @@ Post::whereBetween('published_at', [$from, $to])->get();
 ## Pitfalls
 
 - Do not mix up `->year` (Gregorian) and `->calendarYear` (active calendar).
-- `toImmutable()`/`toMutable()` return `Boron\CarbonImmutable`/`Boron\Carbon` and preserve the active calendar — never plain Carbon.
+- `toImmutable()`/`toMutable()` return `Boron\CarbonImmutable`/`Boron\Carbon` and preserve the active calendar - never plain Carbon.
 - Dates before year 1 of a calendar (Gregorian dates before 622 AD for Jalali/Hijri) throw `Boron\Exceptions\UnsupportedCalendarRangeException`.
 - Tabular `hijri` is a civil approximation. For Saudi-official dates (religious events, KSA business rules) use `hijri-umalqura` (requires ext-intl).
 - Serialize/store dates in Gregorian ISO format (Laravel's default); only convert at the UI boundary.

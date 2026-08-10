@@ -10,7 +10,7 @@ composer require hosni/boron
 |---|---|
 | PHP | `^8.1` |
 | [nesbot/carbon](https://carbon.nesbot.com/) | `^3.0` |
-| `ext-intl` | optional — unlocks ICU drivers (`*-intl`, `hijri-umalqura`) |
+| `ext-intl` | optional - unlocks ICU drivers (`*-intl`, `hijri-umalqura`) |
 
 !!! tip "Laravel versions"
     Boron needs Carbon 3. That means **Laravel 11, 12, and 13**. Laravel 10 and

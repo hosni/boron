@@ -7,7 +7,7 @@ use Boron\CarbonImmutable;
 $date = CarbonImmutable::now()->withCalendar('jalali');
 $next = $date->addDay(); // new instance; $date unchanged
 
-$next->getCalendar()->getName(); // jalali — calendar survives modifications
+$next->getCalendar()->getName(); // jalali - calendar survives modifications
 ```
 
 ## Conversions never leak plain Carbon
