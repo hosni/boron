@@ -1,20 +1,70 @@
 {
-    "name": "boron/boron",
-    "description": "A simple solution for working with different calendars in PHP.",
-    "type": "library",
+    "name": "hosni/boron",
+    "description": "Boron (B, atomic number 5) — a multi-calendar (Jalali/Shamsi, Hijri, Gregorian) drop-in replacement for Carbon (C, atomic number 6).",
     "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "date",
+        "time",
+        "datetime",
+        "carbon",
+        "calendar",
+        "jalali",
+        "shamsi",
+        "persian",
+        "hijri",
+        "islamic",
+        "gregorian",
+        "laravel",
+        "intl",
+        "icu"
+    ],
+    "authors": [
+        {
+            "name": "Hossein Hosni",
+            "email": "hosni.hossein@gmail.com",
+            "homepage": "https://github.com/hosni"
+        }
+    ],
+    "homepage": "https://github.com/hosni/boron",
+    "support": {
+        "issues": "https://github.com/hosni/boron/issues",
+        "source": "https://github.com/hosni/boron"
+    },
+    "require": {
+        "php": "^8.1",
+        "nesbot/carbon": "^3.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.85",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^10.5 || ^11.0"
+    },
+    "suggest": {
+        "ext-intl": "Enables the ICU-backed calendar drivers (jalali-intl, hijri-intl, hijri-umalqura, ...) and localized month names for any locale."
+    },
     "autoload": {
         "psr-4": {
             "Boron\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Hossein Hosni",
-            "email": "hosni.hossein@gmail.com"
+    "autoload-dev": {
+        "psr-4": {
+            "Boron\\Tests\\": "tests/"
         }
-    ],
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.85"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Boron\\Laravel\\BoronServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
