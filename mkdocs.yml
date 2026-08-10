@@ -1,0 +1,114 @@
+site_name: Boron
+site_description: Multi-calendar (Jalali, Hijri, Gregorian) drop-in replacement for Carbon
+site_author: Hossein Hosni
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, 'https://boron.readthedocs.io/']
+
+repo_name: hosni/boron
+repo_url: https://github.com/hosni/boron
+edit_uri: edit/master/docs/
+
+copyright: Copyright &copy; 2026 Hossein Hosni
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+  language: en
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hosni/boron
+    - icon: fontawesome/brands/php
+      link: https://packagist.org/packages/hosni/boron
+
+extra_javascript:
+  - javascript/readthedocs.js
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: installation.md
+      - Quick start: quick-start.md
+      - Mental model: mental-model.md
+  - Guide:
+      - Calendars: guide/calendars.md
+      - Converting: guide/converting.md
+      - Creating & parsing: guide/creating.md
+      - Active calendar: guide/active-calendar.md
+      - Formatting: guide/formatting.md
+      - Arithmetic: guide/arithmetic.md
+      - Immutability: guide/immutability.md
+      - Custom calendars: guide/custom-calendars.md
+      - Exceptions: guide/exceptions.md
+  - Laravel:
+      - Integration: laravel/integration.md
+      - Boost (AI agents): laravel/boost.md
+  - API:
+      - Overview: api/index.md
+      - Carbon: api/carbon.md
+      - CarbonImmutable: api/carbon-immutable.md
+      - CarbonInterface: api/carbon-interface.md
+      - CalendarDate: api/calendar-date.md
+      - CalendarRegistry: api/calendar-registry.md
+      - Calendar drivers: api/calendar-drivers.md
+  - Publishing docs: publishing.md
+  - Changelog: changelog.md

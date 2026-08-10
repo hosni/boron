@@ -1,9 +1,13 @@
 # Boron
 
+[![Documentation Status](https://readthedocs.org/projects/boron/badge/?version=latest)](https://boron.readthedocs.io/en/latest/?badge=latest)
+
 **A multi-calendar, drop-in replacement for [Carbon](https://carbon.nesbot.com/).**
 
 > Boron (B) is element **5** of the periodic table. Carbon (C) is element **6**.
 > Boron sits right next to Carbon — a little lighter, and it knows more calendars. :)
+
+**Docs:** [boron.readthedocs.io](https://boron.readthedocs.io/)
 
 Boron adds a **multi-calendar system** on top of Carbon: Jalali (Shamsi /
 Solar Hijri), Hijri (Islamic / Lunar) and Gregorian, freely convertible to

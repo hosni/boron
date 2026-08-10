@@ -28,6 +28,7 @@
     ],
     "homepage": "https://github.com/hosni/boron",
     "support": {
+        "docs": "https://boron.readthedocs.io",
         "issues": "https://github.com/hosni/boron/issues",
         "source": "https://github.com/hosni/boron"
     },
