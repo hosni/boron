@@ -5,25 +5,21 @@ declare(strict_types=1);
 namespace Boron;
 
 use Boron\Calendars\CalendarInterface;
-use Carbon\CarbonInterface;
+use Carbon\CarbonInterface as BaseCarbonInterface;
 use DateTimeZone;
 
 /**
- * The Boron contract: everything Carbon can do (CarbonInterface), plus the
- * multi-calendar API.
+ * Boron's contract: everything Carbon can do ({@see BaseCarbonInterface}),
+ * plus the multi-calendar API.
  *
- * Implemented by all four Boron classes:
+ * Implemented by {@see Carbon} and {@see CarbonImmutable}. Prefer this
+ * type-hint when you need calendar methods; prefer {@see BaseCarbonInterface}
+ * when any Carbon-compatible object is enough.
  *
- * - {@see Boron} / {@see BoronMutable} (standalone, extends DateTime)
- * - {@see BoronImmutable}              (standalone, extends DateTimeImmutable)
- * - {@see Carbon}                      (drop-in, extends \Carbon\Carbon)
- * - {@see CarbonImmutable}             (drop-in, extends \Carbon\CarbonImmutable)
- *
- * Note that toMutable() and toImmutable() are narrowed so that any
- * implementation always yields Boron-family instances, never a plain
- * Carbon\Carbon or Carbon\CarbonImmutable.
+ * toMutable() / toImmutable() are narrowed so conversions stay inside the
+ * Boron family and never leak plain Carbon instances.
  */
-interface BoronInterface extends CarbonInterface
+interface CarbonInterface extends BaseCarbonInterface
 {
     // /////////////////////////////////////////////////////////////////
     // //////////////////////// CONFIGURATION //////////////////////////
@@ -181,13 +177,13 @@ interface BoronInterface extends CarbonInterface
     // /////////////////////////////////////////////////////////////////
 
     /**
-     * Return a mutable Boron-flavored Carbon copy (never a plain Carbon),
-     * keeping the active calendar.
+     * Return a mutable Boron Carbon copy (never a plain Carbon), keeping
+     * the active calendar.
      */
     public function toMutable(): Carbon;
 
     /**
-     * Return an immutable Boron-flavored Carbon copy (never a plain
+     * Return an immutable Boron CarbonImmutable copy (never a plain
      * CarbonImmutable), keeping the active calendar.
      */
     public function toImmutable(): CarbonImmutable;

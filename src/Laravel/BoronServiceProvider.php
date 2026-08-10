@@ -12,12 +12,11 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Makes Laravel use Boron everywhere it would use Carbon
+ * Makes Laravel use Boron\Carbon everywhere it would use Carbon
  * (Date facade, Eloquent date casts, ...).
  *
- * Boron\Carbon is used (rather than the standalone Boron class) because it
- * is a true Carbon subclass, which keeps every Carbon type-hint across the
- * framework and third-party packages satisfied.
+ * Boron\Carbon is a true Carbon subclass, so every Carbon type-hint across
+ * the framework and third-party packages stays satisfied.
  *
  * Auto-discovered; opt out with:
  *

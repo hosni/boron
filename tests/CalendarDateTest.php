@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Boron\Tests;
 
-use Boron\Boron;
+use Boron\Carbon;
 use Boron\CalendarDate;
 use Boron\CalendarRegistry;
 use Boron\Exceptions\InvalidCalendarDateException;
@@ -62,13 +62,14 @@ final class CalendarDateTest extends TestCase
         self::assertSame('1403-12-28', (string) $date->addDays(-1));
     }
 
-    public function testToBoron(): void
+    public function testToCarbon(): void
     {
         $date = new CalendarDate(CalendarRegistry::get('jalali'), 1403, 1, 1);
 
-        self::assertSame('2024-03-20 00:00:00', $date->toBoron('UTC')->toDateTimeString());
-        self::assertInstanceOf(Boron::class, $date->toBoron());
-        self::assertSame('2024-03-20', $date->toBoronImmutable('Asia/Tehran')->toDateString());
+        self::assertSame('2024-03-20 00:00:00', $date->toCarbon('UTC')->toDateTimeString());
+        self::assertInstanceOf(Carbon::class, $date->toCarbon());
+        self::assertSame('jalali', $date->toCarbon()->getCalendar()->getName());
+        self::assertSame('2024-03-20', $date->toCarbonImmutable('Asia/Tehran')->toDateString());
     }
 
     public function testJson(): void

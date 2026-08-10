@@ -16,7 +16,7 @@ use Stringable;
  * An immutable year/month/day triple expressed in a specific calendar.
  *
  * This is what you get when you look at a Boron instance "through" a
- * calendar, e.g. `Boron::now()->toJalali()`.
+ * calendar, e.g. `Carbon::now()->toJalali()`.
  */
 final class CalendarDate implements Stringable, JsonSerializable
 {
@@ -62,18 +62,9 @@ final class CalendarDate implements Stringable, JsonSerializable
         return self::fromJulianDayNumber($calendar, $this->toJulianDayNumber());
     }
 
-    public function toBoron(DateTimeZone|string|null $timezone = null): Boron
-    {
-        return Boron::fromCalendar($this->calendar, $this->year, $this->month, $this->day, 0, 0, 0, $timezone);
-    }
-
-    public function toBoronImmutable(DateTimeZone|string|null $timezone = null): BoronImmutable
-    {
-        return BoronImmutable::fromCalendar($this->calendar, $this->year, $this->month, $this->day, 0, 0, 0, $timezone);
-    }
-
     /**
-     * Same as toBoron() but returns the Carbon-subclass flavor.
+     * Midnight of this date as a (mutable) Boron\Carbon instance, with the
+     * calendar kept active.
      */
     public function toCarbon(DateTimeZone|string|null $timezone = null): Carbon
     {

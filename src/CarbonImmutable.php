@@ -13,7 +13,7 @@ use Carbon\CarbonImmutable as BaseCarbonImmutable;
  *
  * @see Carbon for the mutable drop-in variant.
  */
-class CarbonImmutable extends BaseCarbonImmutable implements BoronInterface
+class CarbonImmutable extends BaseCarbonImmutable implements CarbonInterface
 {
     use CarbonBridge;
 }

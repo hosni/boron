@@ -6,11 +6,10 @@ namespace Boron\Tests;
 
 use Carbon\Carbon as BaseCarbon;
 use Carbon\CarbonImmutable as BaseCarbonImmutable;
-use Carbon\CarbonInterface;
-use Boron\Boron;
-use Boron\BoronInterface;
+use Carbon\CarbonInterface as BaseCarbonInterface;
 use Boron\Carbon;
 use Boron\CarbonImmutable;
+use Boron\CarbonInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -37,8 +36,8 @@ final class CarbonDropInTest extends TestCase
     {
         self::assertInstanceOf(BaseCarbon::class, Carbon::now());
         self::assertInstanceOf(BaseCarbonImmutable::class, CarbonImmutable::now());
-        self::assertInstanceOf(BoronInterface::class, Carbon::now());
-        self::assertInstanceOf(CarbonInterface::class, CarbonImmutable::now());
+        self::assertInstanceOf(CarbonInterface::class, Carbon::now());
+        self::assertInstanceOf(BaseCarbonInterface::class, CarbonImmutable::now());
 
         // Can be passed anywhere a Carbon is expected.
         $acceptCarbon = static fn (BaseCarbon $date): string => $date->toDateString();
@@ -112,7 +111,6 @@ final class CarbonDropInTest extends TestCase
 
         self::assertSame('jalali', Carbon::now()->getCalendar()->getName());
         self::assertSame('jalali', CarbonImmutable::now()->getCalendar()->getName());
-        self::assertSame('jalali', Boron::now()->getCalendar()->getName());
     }
 
     public function testCalendarArithmetic(): void

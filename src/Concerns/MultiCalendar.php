@@ -24,9 +24,7 @@ use DateTimeZone;
  * addCalendarMonths(), ...).
  *
  * This trait is calendar logic only; the glue that hooks it into Carbon's
- * get()/__serialize()/__unserialize() lives in
- * {@see CarbonBridge} (for classes extending Carbon)
- * and {@see \Boron\Traits\Date} (for the standalone classes).
+ * get()/__serialize()/__unserialize() lives in {@see CarbonBridge}.
  */
 trait MultiCalendar
 {
@@ -35,8 +33,8 @@ trait MultiCalendar
     // /////////////////////////////////////////////////////////////////
 
     /**
-     * Set the process-wide default calendar (shared by Boron and
-     * BoronImmutable).
+     * Set the process-wide default calendar (shared by Carbon and
+     * CarbonImmutable).
      */
     public static function setDefaultCalendar(string|CalendarInterface $calendar): void
     {

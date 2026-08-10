@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Boron\Tests\Laravel;
 
-use Boron\BoronInterface;
+use Boron\CarbonInterface;
 use Boron\Carbon;
 use Boron\CarbonImmutable;
 use Boron\Laravel\BoronServiceProvider;
@@ -55,7 +55,7 @@ final class LaravelIntegrationTest extends \Orchestra\Testbench\TestCase
 
         self::assertInstanceOf(Carbon::class, $now);
         self::assertInstanceOf(BaseCarbon::class, $now);
-        self::assertInstanceOf(BoronInterface::class, $now);
+        self::assertInstanceOf(CarbonInterface::class, $now);
 
         self::assertInstanceOf(
             Carbon::class,
@@ -117,7 +117,7 @@ final class LaravelIntegrationTest extends \Orchestra\Testbench\TestCase
         $publishedAt = $model->published_at;
 
         self::assertInstanceOf(CarbonImmutable::class, $publishedAt);
-        self::assertInstanceOf(BoronInterface::class, $publishedAt);
+        self::assertInstanceOf(CarbonInterface::class, $publishedAt);
         self::assertSame('1403-01-01', (string) $publishedAt->toJalali());
     }
 

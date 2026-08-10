@@ -15,11 +15,8 @@ use Carbon\Carbon as BaseCarbon;
  * against Carbon\Carbon — including Laravel's Date::use(). Conversions
  * (toImmutable()/toMutable()) stay inside the Boron family instead of
  * leaking plain Carbon instances.
- *
- * If you don't need a literal Carbon subclass, the standalone
- * {@see Boron} class offers the same API on top of DateTime.
  */
-class Carbon extends BaseCarbon implements BoronInterface
+class Carbon extends BaseCarbon implements CarbonInterface
 {
     use CarbonBridge;
 }
