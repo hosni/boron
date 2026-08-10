@@ -9,6 +9,13 @@ $config = new PhpCsFixer\Config();
 return $config->setRules([
     '@Symfony' => true,
     'global_namespace_import' => false,
+    // Keep @property-read: calendar magic props are getters only.
+    'phpdoc_no_alias_tag' => [
+        'replacements' => [
+            'type' => 'var',
+            'link' => 'see',
+        ],
+    ],
     'ordered_class_elements' => [
         'order' => [
             'case',

@@ -18,6 +18,18 @@ use DateTimeZone;
  *
  * toMutable() / toImmutable() are narrowed so conversions stay inside the
  * Boron family and never leak plain Carbon instances.
+ *
+ * Calendar-aware magic properties (active calendar; Carbon getters stay Gregorian):
+ *
+ * @property-read int          $calendarYear        Year in the active calendar
+ * @property-read int          $calendarMonth       Month in the active calendar (1-based)
+ * @property-read int          $calendarDay         Day of month in the active calendar
+ * @property-read CalendarDate $calendarDate        Date triple in the active calendar
+ * @property-read string       $calendarMonthName   Localized month name (default calendar locale)
+ * @property-read int          $calendarDaysInMonth Length of the active calendar month
+ * @property-read int          $calendarDayOfYear   1-based day of year in the active calendar
+ * @property-read string       $calendarName        Canonical name of the active calendar
+ * @property-read int          $julianDay           Civil Julian Day Number of the current date
  */
 interface CarbonInterface extends BaseCarbonInterface
 {

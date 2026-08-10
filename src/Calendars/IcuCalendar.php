@@ -25,8 +25,8 @@ class IcuCalendar implements CalendarInterface
     private IntlCalendar $prototype;
 
     /**
-     * @param string      $icuType ICU calendar keyword, e.g. "persian" or "islamic-umalqura"
-     * @param string|null $name    Boron name of this calendar; defaults to the ICU keyword
+     * @param string  $icuType ICU calendar keyword, e.g. "persian" or "islamic-umalqura"
+     * @param ?string $name    Boron name of this calendar; defaults to the ICU keyword
      */
     public function __construct(
         private readonly string $icuType,
