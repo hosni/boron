@@ -1,7 +1,7 @@
 # Installation
 
 ```bash
-composer require hosni/boron
+composer require boron/carbon
 ```
 
 ## Requirements

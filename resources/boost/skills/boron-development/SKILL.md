@@ -7,7 +7,7 @@ description: Work with dates in multiple calendars (Jalali/Shamsi, Hijri, Gregor
 
 ## When to use this skill
 
-Use this skill whenever the task involves Jalali (Shamsi/Persian), Hijri (Islamic), or multi-calendar dates in an application using `hosni/boron`: displaying dates to users, parsing user-entered dates, storing them, date arithmetic in a non-Gregorian calendar, or localized date formatting.
+Use this skill whenever the task involves Jalali (Shamsi/Persian), Hijri (Islamic), or multi-calendar dates in an application using `boron/carbon`: displaying dates to users, parsing user-entered dates, storing them, date arithmetic in a non-Gregorian calendar, or localized date formatting.
 
 ## Core model - read this first
 

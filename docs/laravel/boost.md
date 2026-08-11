@@ -12,7 +12,7 @@ in Boost-enabled apps learn the multi-calendar API automatically.
 
 ## How discovery works
 
-No code registration is required. When a project that depends on `hosni/boron`
+No code registration is required. When a project that depends on `boron/carbon`
 runs:
 
 ```bash

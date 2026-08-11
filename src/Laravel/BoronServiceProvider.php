@@ -20,20 +20,20 @@ use Illuminate\Support\ServiceProvider;
  *
  * Auto-discovered; opt out with:
  *
- *     "extra": {"laravel": {"dont-discover": ["hosni/boron"]}}
+ *     "extra": {"laravel": {"dont-discover": ["boron/carbon"]}}
  */
 class BoronServiceProvider extends ServiceProvider
 {
     private static function version(): string
     {
-        if (InstalledVersions::isInstalled('hosni/boron')) {
-            return InstalledVersions::getPrettyVersion('hosni/boron') ?? 'unknown';
+        if (InstalledVersions::isInstalled('boron/carbon')) {
+            return InstalledVersions::getPrettyVersion('boron/carbon') ?? 'unknown';
         }
 
         // Running from the package itself (tests, path repository, ...).
         $root = InstalledVersions::getRootPackage();
 
-        return 'hosni/boron' === $root['name'] ? ($root['pretty_version'] ?? 'dev') : 'unknown';
+        return 'boron/carbon' === $root['name'] ? ($root['pretty_version'] ?? 'dev') : 'unknown';
     }
 
     public function register(): void

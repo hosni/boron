@@ -1,4 +1,4 @@
-## Boron (hosni/boron)
+## Boron (boron/carbon)
 
 This application uses Boron, a multi-calendar (Jalali/Shamsi, Hijri, Gregorian) drop-in replacement for Carbon. Its service provider calls `Date::use(\Boron\Carbon::class)`, so `now()`, `today()`, the `Date` facade, and Eloquent `datetime` casts all return `Boron\Carbon` instances (`immutable_datetime` casts return `Boron\CarbonImmutable`). Both are true Carbon subclasses - the entire Carbon API works unchanged.
 

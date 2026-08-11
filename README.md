@@ -53,7 +53,7 @@ plain Carbon instances; the active calendar travels along.
 ## Installation
 
 ```bash
-composer require hosni/boron
+composer require boron/carbon
 ```
 
 Requirements: PHP 8.1+, `nesbot/carbon` ^3.0. The `intl` extension is

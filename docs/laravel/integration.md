@@ -24,7 +24,7 @@ Opt out of discovery:
 ```json
 "extra": {
     "laravel": {
-        "dont-discover": ["hosni/boron"]
+        "dont-discover": ["boron/carbon"]
     }
 }
 ```
