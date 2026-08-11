@@ -2,10 +2,10 @@
 
 [![Tests](https://github.com/hosni/boron/actions/workflows/tests.yml/badge.svg)](https://github.com/hosni/boron/actions/workflows/tests.yml)
 [![Docs](https://readthedocs.org/projects/boron/badge/?version=latest)](https://boron.readthedocs.io/en/latest/?badge=latest)
-[![Latest Version](https://img.shields.io/packagist/v/hosni/boron.svg?label=packagist)](https://packagist.org/packages/hosni/boron)
-[![PHP Version](https://img.shields.io/packagist/php-v/hosni/boron.svg)](https://packagist.org/packages/hosni/boron)
-[![Total Downloads](https://img.shields.io/packagist/dt/hosni/boron.svg)](https://packagist.org/packages/hosni/boron)
-[![License](https://img.shields.io/packagist/l/hosni/boron.svg)](https://github.com/hosni/boron/blob/master/LICENSE)
+[![Latest Version](https://img.shields.io/packagist/v/boron/carbon.svg?label=packagist)](https://packagist.org/packages/boron/carbon)
+[![PHP Version](https://img.shields.io/packagist/php-v/boron/carbon.svg)](https://packagist.org/packages/boron/carbon)
+[![Total Downloads](https://img.shields.io/packagist/dt/boron/carbon.svg)](https://packagist.org/packages/boron/carbon)
+[![License](https://img.shields.io/packagist/l/boron/carbon.svg)](https://github.com/hosni/boron/blob/master/LICENSE)
 
 **A multi-calendar, drop-in replacement for [Carbon](https://carbon.nesbot.com/).**
 
