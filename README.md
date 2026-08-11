@@ -271,8 +271,7 @@ suite running on [Orchestra Testbench](https://github.com/orchestral/testbench)
 - [Shahab Yazdi](https://github.com/shahabyazdi) - the calendar engine design
   and the Persian astronomical leap-year table come from his
   [date-object](https://github.com/shahabyazdi/date-object) library.
-- [Brian Nesbitt, kylekatarnls & Carbon contributors](https://github.com/CarbonPHP/carbon)
-  for the Carbon foundation Boron builds on.
+- [Brian Nesbitt](https://github.com/briannesbitt), [kylekatarnls](https://github.com/kylekatarnls) & [Carbon contributors](https://github.com/CarbonPHP/carbon/graphs/contributors) for the Carbon foundation Boron builds on.
 - [ICU](https://icu.unicode.org/) - the reference implementation behind the
   `intl` drivers.
 
