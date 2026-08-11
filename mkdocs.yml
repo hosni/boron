@@ -78,7 +78,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/hosni/boron
     - icon: fontawesome/brands/php
-      link: https://packagist.org/packages/hosni/boron
+      link: https://packagist.org/packages/boron/carbon
 
 extra_javascript:
   - javascript/readthedocs.js
