@@ -12,7 +12,7 @@
 > Boron (B) is element **5** of the periodic table. Carbon (C) is element **6**.
 > Boron sits right next to Carbon - a little lighter, and it knows more calendars. :)
 
-**Docs:** [boron.readthedocs.io](https://boron.readthedocs.io/)
+**Docs:** [boron.readthedocs.io](https://boron.readthedocs.io/) · [مستندات فارسی](https://boron.readthedocs.io/fa/latest/) · [README فارسی](README.fa.md)
 
 Boron adds a **multi-calendar system** on top of Carbon: Jalali (Shamsi /
 Solar Hijri), Hijri (Islamic / Lunar) and Gregorian, freely convertible to

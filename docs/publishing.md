@@ -23,7 +23,7 @@ and build with MkDocs + Material.
 | `.readthedocs.yaml` | OS, Python, MkDocs config path, requirements |
 | `mkdocs.yml` | Site structure, Material theme, nav |
 | `docs/requirements.txt` | Pinned MkDocs / Material / extensions |
-| `docs/**/*.md` | Content |
+| `docs/**/*.md` | Content (English + Persian via `*.fa.md` suffixes) |
 | `docs/javascript/readthedocs.js` | RTD search + version menu integration |
 | `docs/overrides/main.html` | Material override for RTD addons |
 

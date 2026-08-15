@@ -50,6 +50,49 @@ theme:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fa
+          name: فارسی
+          build: true
+          site_name: بورون
+          site_description: جایگزین چندتقویمی (جلالی، هجری، میلادی) برای Carbon
+          nav_translations:
+            Home: خانه
+            Getting started: شروع کار
+            Installation: نصب
+            Quick start: شروع سریع
+            Mental model: مدل ذهنی
+            Guide: راهنما
+            Calendars: تقویم‌ها
+            Converting: تبدیل
+            Creating & parsing: ساخت و پارس
+            Active calendar: تقویم فعال
+            Formatting: قالب‌بندی
+            Arithmetic: محاسبات
+            Immutability: تغییرناپذیری
+            Custom calendars: تقویم‌های سفارشی
+            Exceptions: استثناها
+            Laravel: لاراول
+            Integration: یکپارچه‌سازی
+            Boost (AI agents): بوست (عامل‌های هوش مصنوعی)
+            API: مرجع API
+            Overview: مرور کلی
+            Carbon: Carbon
+            CarbonImmutable: CarbonImmutable
+            CarbonInterface: CarbonInterface
+            CalendarDate: CalendarDate
+            CalendarRegistry: CalendarRegistry
+            Calendar drivers: درایورهای تقویم
+            Publishing docs: انتشار مستندات
+            Changelog: تغییرات
 
 markdown_extensions:
   - admonition

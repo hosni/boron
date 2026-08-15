@@ -41,6 +41,11 @@ Carbon::now()->calendarFormat('l j F Y', 'jalali', 'fa', true);
 | [`Boron\CarbonImmutable`](api/carbon-immutable.md) | `Carbon\CarbonImmutable` | Immutable drop-in |
 | [`Boron\CarbonInterface`](api/carbon-interface.md) | `Carbon\CarbonInterface` | Calendar-aware contract |
 
+## Languages
+
+This site is available in **English** and **فارسی** — use the language switcher
+in the header (Material + `mkdocs-static-i18n`).
+
 ## Next steps
 
 1. [Install](installation.md) the package
