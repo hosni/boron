@@ -14,6 +14,7 @@ use Boron\Support\Digits;
 use Carbon\Unit;
 use DateTimeImmutable;
 use DateTimeZone;
+use Override;
 
 /**
  * The multi-calendar layer shared by every Boron class.
@@ -418,6 +419,7 @@ trait MultiCalendar
      * calendar. Overrides Carbon's toMutable() so the underlying Carbon
      * machinery never leaks a plain Carbon\Carbon instance.
      */
+    #[Override]
     public function toMutable(): Carbon
     {
         return $this->cast(Carbon::class)->withCalendar($this->getActiveCalendar());
@@ -428,6 +430,7 @@ trait MultiCalendar
      * calendar. Overrides Carbon's toImmutable() so the underlying Carbon
      * machinery never leaks a plain Carbon\CarbonImmutable instance.
      */
+    #[Override]
     public function toImmutable(): CarbonImmutable
     {
         return $this->cast(CarbonImmutable::class)->withCalendar($this->getActiveCalendar());
