@@ -44,7 +44,8 @@ Carbon::now()->calendarFormat('l j F Y', 'jalali', 'fa', true);
 ## Languages
 
 This site is available in **English** and **فارسی** — use the language switcher
-in the header (Material + `mkdocs-static-i18n`).
+in the header. On Read the Docs the locales live at `/en/…` and `/fa/…`
+(separate RTD translation projects), not nested under `/en/…/fa/…`.
 
 ## Next steps
 

@@ -54,14 +54,20 @@ plugins:
       docs_structure: suffix
       fallback_to_default: true
       reconfigure_material: true
+      # On Read the Docs each language is a separate project (/en/…, /fa/…).
+      # READTHEDOCS_LANGUAGE selects which locale to build at the site root.
+      # Locally (unset) both English and Persian are built (Persian under /fa/).
+      build_only_locale: !ENV [READTHEDOCS_LANGUAGE, null]
       languages:
         - locale: en
           default: true
           name: English
           build: true
+          fixed_link: /en/
         - locale: fa
           name: فارسی
           build: true
+          fixed_link: /fa/
           site_name: بورون
           site_description: جایگزین چندتقویمی (جلالی، هجری، میلادی) برای Carbon
           nav_translations:
@@ -117,6 +123,17 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
+  # Absolute language roots for Material’s switcher. On local multi-locale
+  # builds, mkdocs-static-i18n rewrites these to the matching page URLs.
+  # On single-locale RTD builds they stay as /en/ and /fa/ so stay-on-page
+  # works across https://boron.readthedocs.io/{lang}/{version}/….
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: فارسی
+      link: /fa/
+      lang: fa
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hosni/boron
