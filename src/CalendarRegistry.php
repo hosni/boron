@@ -11,6 +11,7 @@ use Boron\Calendars\IcuCalendar;
 use Boron\Calendars\JalaliCalendar;
 use Boron\Calendars\PersianAstronomicalCalendar;
 use Boron\Exceptions\UnknownCalendarException;
+use Closure;
 
 /**
  * Central registry of calendar drivers.
@@ -18,11 +19,11 @@ use Boron\Exceptions\UnknownCalendarException;
  * Calendars are registered lazily (as factories) and resolved by name or
  * alias. You can register your own calendars:
  *
- *     CalendarRegistry::register('buddhist', fn () => new IcuCalendar('buddhist'));
+ *     CalendarRegistry::register('buddhist', static fn () => new IcuCalendar('buddhist'));
  */
 final class CalendarRegistry
 {
-    /** @var array<string, callable(): CalendarInterface> */
+    /** @var array<string, Closure(): CalendarInterface> */
     private static array $factories = [];
 
     /** @var array<string, CalendarInterface> */
@@ -69,10 +70,10 @@ final class CalendarRegistry
     }
 
     /**
-     * @param callable(): CalendarInterface|CalendarInterface $factory
-     * @param list<string>                                    $aliases
+     * @param Closure(): CalendarInterface $factory
+     * @param list<string>                 $aliases
      */
-    public static function register(string $name, callable|CalendarInterface $factory, array $aliases = []): void
+    public static function register(string $name, Closure|CalendarInterface $factory, array $aliases = []): void
     {
         self::bootstrap();
 
@@ -138,7 +139,6 @@ final class CalendarRegistry
 
     public static function gregorian(): GregorianCalendar
     {
-        /* @var GregorianCalendar */
         return self::get('gregorian');
     }
 
