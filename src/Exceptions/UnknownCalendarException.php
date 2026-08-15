@@ -13,7 +13,7 @@ class UnknownCalendarException extends InvalidArgumentException implements Boron
      */
     public static function forName(string $name, array $known = []): self
     {
-        $message = "Unknown calendar \"$name\".";
+        $message = "Unknown calendar \"{$name}\".";
 
         if ([] !== $known) {
             $message .= ' Known calendars: '.implode(', ', $known).'.';
