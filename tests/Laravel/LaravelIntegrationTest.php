@@ -144,9 +144,27 @@ final class LaravelIntegrationTest extends \Orchestra\Testbench\TestCase
         self::assertSame(\Boron\Carbon::class, $section['date_class']);
         self::assertSame('gregorian', $section['default_calendar']);
         self::assertSame('en', $section['calendar_locale']);
-        self::assertStringContainsString('jalali', $section['calendars']);
-        self::assertStringContainsString('hijri', $section['calendars']);
+        self::assertIsArray($section['calendars']);
+        self::assertContains('jalali', $section['calendars']);
+        self::assertContains('hijri', $section['calendars']);
         self::assertNotSame('unknown', $section['version']);
+        self::assertSame(
+            [
+                'name' => 'Hossein Hosni',
+                'email' => 'hosni.hossein@gmail.com',
+            ],
+            $section['maintained_by'],
+        );
+
+        \Illuminate\Support\Facades\Artisan::call('about', ['--only' => 'boron']);
+
+        $output = \Illuminate\Support\Facades\Artisan::output();
+
+        self::assertStringContainsString('Boron', $output);
+        self::assertStringContainsString(\Boron\Carbon::class, $output);
+        self::assertStringContainsString(implode(', ', $section['calendars']), $output);
+        self::assertStringContainsString('Hossein Hosni', $output);
+        self::assertStringNotContainsString('hosni.hossein@gmail.com', $output);
     }
 
     public function testModelSerializationKeepsStandardFormat(): void

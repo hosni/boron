@@ -57,10 +57,21 @@ class BoronServiceProvider extends ServiceProvider
             'Date Class' => Carbon::class,
             'Default Calendar' => CalendarRegistry::getDefaultCalendar()->getName(),
             'Calendar Locale' => CalendarRegistry::getDefaultLocale(),
-            'Calendars' => implode(', ', CalendarRegistry::names()),
+            'Calendars' => AboutCommand::format(
+                value: implode(', ', CalendarRegistry::names()),
+                json: static fn () => CalendarRegistry::names(),
+            ),
             'Intl (ICU) Drivers' => \extension_loaded('intl')
-                ? sprintf('ENABLED (ICU %s)', \defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : 'unknown')
+                ? \sprintf('ENABLED (ICU %s)', \defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : 'unknown')
                 : 'DISABLED (ext-intl not loaded)',
+            'Maintained by' => AboutCommand::format(
+                value: 'Hossein Hosni',
+                console: static fn (string $value) => "<fg=green>$value</>",
+                json: static fn (string $value) => [
+                    'name' => $value,
+                    'email' => 'hosni.hossein@gmail.com',
+                ],
+            ),
         ]);
     }
 }
