@@ -81,6 +81,13 @@ castهای `datetime` مقدار `Boron\Carbon` و `immutable_datetime` مقدا
 
 بورون خودش را در `php artisan about` هم ثبت می‌کند (نسخه، درایورهای فعال، وضعیت ICU).
 
+یک [افزونهٔ PHPStan](docs/laravel/phpstan.md) متدهای `Date::*`، `now()` /
+`today()` و attributeهای datetime الکوئنت را تایپ می‌کند تا `toJalali()` و
+بقیه type-check شوند. با `phpstan/extension-installer` خودکار include می‌شود؛
+وگرنه `vendor/boron/carbon/extension.neon` را به `includes` در `phpstan.neon`
+اضافه کنید. متدهای تقویم را روی `Illuminate\Support\Carbon::parse()` صدا نزنید —
+`Date::use()` آن کلاس را جایگزین نمی‌کند.
+
 ### Laravel Boost (عامل‌های هوش مصنوعی)
 
 بورون دارایی‌های [Laravel Boost](https://laravel.com/docs/boost) را همراه دارد تا

@@ -60,6 +60,12 @@ No special cast class is required. With the provider registered:
 
 JSON serialization stays Laravel's standard ISO format.
 
+## PHPStan
+
+Laravel types `Date::parse()` as `Illuminate\Support\Carbon`, so PHPStan will
+not see `toJalali()` unless you load Boron's extension. See
+[PHPStan](phpstan.md) (`phpstan/extension-installer` or one `includes` line).
+
 ## Testing
 
 The package ships an Orchestra Testbench suite under `tests/Laravel` covering

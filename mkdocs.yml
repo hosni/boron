@@ -88,6 +88,7 @@ plugins:
             Exceptions: استثناها
             Laravel: لاراول
             Integration: یکپارچه‌سازی
+            PHPStan: PHPStan
             Boost (AI agents): بوست (عامل‌های هوش مصنوعی)
             API: مرجع API
             Overview: مرور کلی
@@ -161,6 +162,7 @@ nav:
       - Exceptions: guide/exceptions.md
   - Laravel:
       - Integration: laravel/integration.md
+      - PHPStan: laravel/phpstan.md
       - Boost (AI agents): laravel/boost.md
   - API:
       - Overview: api/index.md

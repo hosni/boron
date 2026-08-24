@@ -10,9 +10,14 @@
         <testsuite name="Core">
             <directory>tests</directory>
             <exclude>tests/Laravel</exclude>
+            <exclude>tests/PHPStan</exclude>
         </testsuite>
         <testsuite name="Laravel">
             <directory>tests/Laravel</directory>
+        </testsuite>
+        <testsuite name="PHPStan">
+            <directory>tests/PHPStan</directory>
+            <exclude>tests/PHPStan/data</exclude>
         </testsuite>
     </testsuites>
     <source>

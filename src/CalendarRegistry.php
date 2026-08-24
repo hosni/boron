@@ -139,6 +139,9 @@ final class CalendarRegistry
 
     public static function gregorian(): GregorianCalendar
     {
+        /**
+         * @var GregorianCalendar
+         */
         return self::get('gregorian');
     }
 

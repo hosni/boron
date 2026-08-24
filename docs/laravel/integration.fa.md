@@ -60,6 +60,12 @@ $post->published_at = Carbon::parseFromCalendar('jalali', $request->input('publi
 
 سریال‌سازی JSON همان قالب استاندارد ISO لاراول می‌ماند.
 
+## PHPStan
+
+لاراول `Date::parse()` را `Illuminate\Support\Carbon` تایپ می‌کند؛ پس PHPStan
+`toJalali()` را نمی‌بیند مگر افزونهٔ بورون را بارگذاری کنید. ببینید
+[PHPStan](phpstan.md) (`phpstan/extension-installer` یا یک خط `includes`).
+
 ## تست
 
 پکیج یک سوئیت Orchestra Testbench زیر `tests/Laravel` دارد که facade تاریخ،

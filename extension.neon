@@ -1,0 +1,27 @@
+# PHPStan extension: teach analysers that Laravel's Date facade, now()/today(),
+# and Eloquent datetime attributes (typed as Illuminate\Support\Carbon /
+# Carbon\CarbonImmutable) expose Boron's calendar API.
+#
+# Auto-included by phpstan/extension-installer via composer extra.phpstan.includes.
+# Manual include: `includes: [vendor/boron/carbon/extension.neon]`
+services:
+    -
+        class: Boron\PHPStan\DateFacadeReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+    -
+        class: Boron\PHPStan\NowTodayReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicFunctionReturnTypeExtension
+    -
+        class: Boron\PHPStan\DateFacadeMethodsExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+    -
+        class: Boron\PHPStan\LaravelCarbonMethodsExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension
+    -
+        class: Boron\PHPStan\LaravelCarbonPropertiesExtension
+        tags:
+            - phpstan.broker.propertiesClassReflectionExtension
