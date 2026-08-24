@@ -31,7 +31,8 @@ Carbon::now()->calendarFormat('l j F Y', 'jalali', 'fa', true);
 - **Presentation-layer calendars** - the stored instant stays Gregorian; other
   calendars are a view for input and display.
 - **Laravel-ready** - auto-discovered provider, Eloquent casts, `php artisan about`,
-  and [Laravel Boost](laravel/boost.md) AI skills.
+  a [PHPStan extension](laravel/phpstan.md) for `Date::*` / `now()` / Eloquent, and
+  [Laravel Boost](laravel/boost.md) AI skills.
 
 ## Class family
 

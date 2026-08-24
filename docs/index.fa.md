@@ -29,6 +29,7 @@ Carbon::now()->calendarFormat('l j F Y', 'jalali', 'fa', true);
 - **تقویم به‌عنوان لایهٔ نمایش** — لحظهٔ ذخیره‌شده میلادی می‌ماند؛ بقیهٔ تقویم‌ها
   نمایی برای ورودی و نمایش‌اند.
 - **آمادهٔ لاراول** — سرویس‌پرووایدر خودکشف، Eloquent casts، `php artisan about`،
+  [افزونهٔ PHPStan](laravel/phpstan.md) برای `Date::*` / `now()` / Eloquent،
   و مهارت‌های AI در [Laravel Boost](laravel/boost.md).
 
 ## خانوادهٔ کلاس‌ها

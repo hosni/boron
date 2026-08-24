@@ -177,6 +177,14 @@ final class CalendarDate implements Stringable, JsonSerializable
         ];
     }
 
+    /**
+     * @return array{
+     *     calendar: string,
+     *     day: int,
+     *     month: int,
+     *     year: int,
+     * }
+     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

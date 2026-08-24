@@ -112,6 +112,7 @@ Post::whereBetween('published_at', [$from, $to])->get();
 
 - Do not mix up `->year` (Gregorian) and `->calendarYear` (active calendar).
 - `toImmutable()`/`toMutable()` return `Boron\CarbonImmutable`/`Boron\Carbon` and preserve the active calendar - never plain Carbon.
+- `Illuminate\Support\Carbon::parse()->toJalali()` fails at runtime: `Date::use()` does not replace `Support\Carbon::parse()`. Use `Date::parse()`, `now()`, Eloquent casts, or `Boron\Carbon`. Include `vendor/boron/carbon/extension.neon` in PHPStan (automatic with `phpstan/extension-installer`) so those call sites type-check.
 - Dates before year 1 of a calendar (Gregorian dates before 622 AD for Jalali/Hijri) throw `Boron\Exceptions\UnsupportedCalendarRangeException`.
 - Tabular `hijri` is a civil approximation. For Saudi-official dates (religious events, KSA business rules) use `hijri-umalqura` (requires ext-intl).
 - Serialize/store dates in Gregorian ISO format (Laravel's default); only convert at the UI boundary.

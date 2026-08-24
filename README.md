@@ -86,6 +86,13 @@ Testbench integration test suite (`tests/Laravel`).
 Boron also registers itself with `php artisan about` (version, active
 calendar drivers, ICU availability).
 
+A [PHPStan extension](docs/laravel/phpstan.md) types `Date::*`, `now()` /
+`today()`, and Eloquent datetime attributes so `toJalali()` etc. type-check.
+With `phpstan/extension-installer` it is included automatically; otherwise add
+`vendor/boron/carbon/extension.neon` to `phpstan.neon` `includes`.
+Do not call calendar methods on `Illuminate\Support\Carbon::parse()` —
+`Date::use()` does not replace that class.
+
 ### Laravel Boost (AI agents)
 
 Boron ships [Laravel Boost](https://laravel.com/docs/boost) assets, so AI
